@@ -354,3 +354,106 @@ body {
 .hidden {
     display: none
 }
+
+/* Custom Updates for Project Tag Badges */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* Switched to left align for an engineering feel */
+    padding: 24px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #e6eef6;
+    text-decoration: none;
+    transition: transform .18s, box-shadow .18s, border-color .18s;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent-2);
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+}
+
+.project-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+}
+
+.project-tags span {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: rgba(34, 193, 195, 0.1);
+    color: var(--accent-2);
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(34, 193, 195, 0.15);
+}
+
+.project-card h4 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.project-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Styling for explicit project layout links */
+.card-links {
+    margin-top: auto;
+    padding-top: 16px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.proj-link {
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.proj-link.source {
+    background: rgba(255, 255, 255, 0.05);
+    color: #e6eef6;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.proj-link.source:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.proj-link.live {
+    background: var(--accent);
+    color: #071223;
+}
+
+.proj-link.live:hover {
+    opacity: 0.9;
+}
+
+.badge.containerized {
+    font-size: 11px;
+    color: var(--muted);
+    font-style: italic;
+    border-left: 2px solid rgba(255, 255, 255, 0.2);
+    padding-left: 8px;
+}
+
+/* Adjust projects grid layout dynamically to fit four items comfortably */
+@media (min-width: 901px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
